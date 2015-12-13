@@ -19,6 +19,7 @@
 	<dimen name="view_badge_round_size">20dp</dimen>
 	<dimen name="main_text_size">16dp</dimen>
 	<dimen name="list_text_left_padding">16dp</dimen>
+	<dimen name="parent_button_bottom_margin">24dp</dimen>
 
 	<color name="app_line_color">#888</color>
 </resources>

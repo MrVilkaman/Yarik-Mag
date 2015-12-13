@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	style="@style/Parent">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_above="@+id/button"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentEnd="true">
+
+	</RelativeLayout>
+
+
+	<com.gc.materialdesign.views.ButtonRectangle
+		style="@style/Button"
+		android:id="@+id/back"
+		android:text="@string/back"
+		android:layout_alignParentBottom="true"
+		android:layout_margin="@dimen/parent_button_bottom_margin"
+		android:layout_centerHorizontal="true"/>
+</RelativeLayout>
