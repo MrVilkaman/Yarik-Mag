@@ -16,6 +16,8 @@
 
 	<com.gc.materialdesign.views.ButtonRectangle
 		style="@style/Button"
+		android:background="@color/button_background_color"
+		android:textColor="@color/button_text_color"
 		android:id="@+id/back"
 		android:text="@string/back"
 		android:layout_alignParentBottom="true"

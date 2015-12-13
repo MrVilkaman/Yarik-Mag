@@ -25,8 +25,6 @@
 	<style name="Button">
 		<item name="android:layout_width">200dp</item>
 		<item name="android:layout_height">50dp</item>
-		<item name="android:background">@color/primary</item>
-		<item name="android:textColor">@color/icons</item>
 	</style>
 
 	<style name="Text">
