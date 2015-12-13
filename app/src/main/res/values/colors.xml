@@ -2,25 +2,31 @@
 <resources>
 
 	 <!--GLOBAL-->
+
+	<color name="primary">#8BC34A</color>
+	<color name="primary_dark">#689F38</color>
+	<color name="primary_light">#DCEDC8</color>
+	<color name="accent">#009688</color>
+	<color name="primary_text">#212121</color>
+	<color name="secondary_text">#727272</color>
+	<color name="icons">#212121</color>
+	<color name="divider">#B6B6B6</color>
+
     <color name="app_background">#F0F0F0</color>
     <color name="toolbar_color">#01BCF1</color>
 	<color name="title_sub_text_color">#007798</color>
 
-	<color name="default_text_color">#262626</color>
+	<color name="default_text_color">@color/primary_text</color>
     <color name="text_color">#1A1A1A</color>
-
-	<color name="toolbar_switcher_button_norm">#FCFCFC</color>
-	<color name="view_badge_round_color">#133E90</color>
-	<color name="list_item_sub_text_color">#888</color>
 
 	<!--PROGRESS BAR-->
 	<color name="progress_background">#EEEEEE</color>
 	<color name="progress_active">@color/toolbar_color</color>
 
-	<color name="answer_background_color">#e2e8ef</color>
+	<color name="answer_background_color">@color/primary_light</color>
 
 	<color name="input_bar_disabled">#fafafa</color>
 	<color name="color">#f7f7f7</color>
-	<color name="app_main_text_color">#f00</color>
+	<color name="app_main_text_color">@color/primary_text</color>
 
 </resources>

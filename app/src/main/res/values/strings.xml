@@ -1,3 +1,5 @@
 <resources>
 	<string name="app_name">Диагностика авто</string>
+	<string name="main_title">Вас приветствует Ваш авто помощник</string>
+	<string name="main_chouse_category">Выбрать тему</string>
 </resources>

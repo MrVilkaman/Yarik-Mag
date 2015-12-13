@@ -15,17 +15,4 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"/>
 
-	<com.pnikosis.materialishprogress.ProgressWheel
-		android:visibility="gone"
-		tools:visibility="visible"
-		android:background="#88000000"
-		android:id="@+id/progress_wheel"
-		android:gravity="center"
-		android:layout_width="fill_parent"
-		android:layout_height="fill_parent"
-		android:layout_centerHorizontal="true"
-		android:layout_centerVertical="true"
-		wheel:matProg_barColor="@color/app_background"
-		wheel:matProg_progressIndeterminate="true" />
-
 </RelativeLayout>

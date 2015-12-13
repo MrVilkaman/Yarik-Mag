@@ -16,7 +16,7 @@ public class StartScreenFragment extends BaseFragment<StartScreenPresenter> {
 
 	@Override
 	protected void onCreateView(View view, Bundle savedInstanceState) {
-
+		getToolbar().hide();
 	}
 
 	@Override

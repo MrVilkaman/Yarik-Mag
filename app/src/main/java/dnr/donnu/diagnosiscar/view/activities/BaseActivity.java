@@ -12,7 +12,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 
-import com.pnikosis.materialishprogress.ProgressWheel;
 
 import java.util.List;
 
@@ -35,7 +34,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseActi
 
 	private Toolbar toolbar;
 
-	private ProgressWheel progress;
 	private boolean inProgress;
 
 	@Override
@@ -60,21 +58,18 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseActi
 	}
 
 	private void configureProgressBar() {
-		progress = (ProgressWheel) findViewById(R.id.progress_wheel);
-		progress.setOnTouchListener((v, event) -> true);
+
 	}
 
 	@Override
 	public void showProgress() {
 		hideKeyboard();
 		inProgress = true;
-		progress.setVisibility(View.VISIBLE);
 	}
 
 	@Override
 	public void hideProgress() {
 		inProgress = false;
-		progress.setVisibility(View.GONE);
 	}
 
 	@Override
