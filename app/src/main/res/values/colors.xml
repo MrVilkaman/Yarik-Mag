@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="colorPrimary">#3F51B5</color>
-	<color name="colorPrimaryDark">#303F9F</color>
-	<color name="colorAccent">#FF4081</color>
+
+	 <!--GLOBAL-->
+    <color name="app_background">#F0F0F0</color>
+    <color name="toolbar_color">#01BCF1</color>
+	<color name="title_sub_text_color">#007798</color>
+
+	<color name="default_text_color">#262626</color>
+    <color name="text_color">#1A1A1A</color>
+
+	<color name="toolbar_switcher_button_norm">#FCFCFC</color>
+	<color name="view_badge_round_color">#133E90</color>
+	<color name="list_item_sub_text_color">#888</color>
+
+	<!--PROGRESS BAR-->
+	<color name="progress_background">#EEEEEE</color>
+	<color name="progress_active">@color/toolbar_color</color>
+
+	<color name="answer_background_color">#e2e8ef</color>
+
+	<color name="input_bar_disabled">#fafafa</color>
+	<color name="color">#f7f7f7</color>
+	<color name="app_main_text_color">#f00</color>
+
 </resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:tools="http://schemas.android.com/tools"
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/toolbar_layout_height">
+
+	<ImageButton
+		android:id="@+id/toolbar_home_btn"
+		android:layout_width="@dimen/toolbar_layout_height"
+		android:layout_height="@dimen/toolbar_layout_height"
+		android:background="@null"
+		android:scaleType="centerInside"/>
+		<!--tools:src="@drawable/ic_back"-->
+	<LinearLayout
+		android:id="@+id/linearLayout"
+		style="@style/LL.H"
+		android:layout_width="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_centerVertical="true">
+
+		<TextView
+			android:id="@+id/toolbar_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:textColor="@color/app_main_text_color"
+			android:textSize="@dimen/toolbar_title_size"
+			tools:text="Правила"/>
+
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:id="@+id/toolbar_button_place"
+		android:layout_width="wrap_content"
+		android:layout_height="fill_parent"
+		android:layout_alignParentEnd="true"
+		android:layout_alignParentRight="true"
+		android:layout_marginLeft="@dimen/toolbar_button_place_side_margin"
+		android:layout_marginRight="@dimen/toolbar_button_place_side_margin"
+		android:layout_toEndOf="@+id/linearLayout"
+		android:layout_toRightOf="@+id/linearLayout"
+		android:gravity="left"
+		android:orientation="horizontal">
+
+		<Space style="@style/Aggregator"/>
+	</LinearLayout>
+</RelativeLayout>

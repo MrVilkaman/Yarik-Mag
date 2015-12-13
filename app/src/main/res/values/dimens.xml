@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+	<!--TOOLBAR-->
+	<dimen name="toolbar_title_size">16dp</dimen>
+	<dimen name="toolbar_btn_text_size">14dp</dimen>
+	<dimen name="toolbar_button_place_side_margin">8dp</dimen>
+	<dimen name="toolbar_layout_height">40dp</dimen>
+
+	<dimen name="progress_bar_width">4dp</dimen>
+
+	<!--GLOBAL-->
+	<dimen name="default_btn_text_size">14dp</dimen>
+	<dimen name="default_text_size">12dp</dimen>
+
+	<dimen name="round_btn_corners">20dp</dimen>
+	<dimen name="round_btn_height">40dp</dimen>
+	<dimen name="round_btn_stroke_size">1dp</dimen>
+
+	<dimen name="view_badge_round_size">20dp</dimen>
+	<dimen name="main_text_size">16dp</dimen>
+	<dimen name="list_text_left_padding">16dp</dimen>
+
+	<color name="app_line_color">#888</color>
+</resources>
