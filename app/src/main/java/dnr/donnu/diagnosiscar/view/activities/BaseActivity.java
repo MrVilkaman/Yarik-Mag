@@ -100,13 +100,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseActi
 		this.doubleBackToExitPressedOnce = true;
 		Toast.makeText(this, "Еще раз", Toast.LENGTH_SHORT).show();
 
-		new Handler().postDelayed(new Runnable() {
-
-			@Override
-			public void run() {
-				doubleBackToExitPressedOnce = false;
-			}
-		}, 1000);
+		new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 1000);
 	}
 
 	protected boolean hasChild() {
