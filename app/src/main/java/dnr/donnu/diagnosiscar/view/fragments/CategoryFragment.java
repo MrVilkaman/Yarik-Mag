@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import butterknife.Bind;
 import butterknife.OnClick;
 import dnr.donnu.diagnosiscar.R;
+import dnr.donnu.diagnosiscar.model.entity.Question;
 import dnr.donnu.diagnosiscar.presenter.adapter.CategoryAdapter;
 import dnr.donnu.diagnosiscar.presenter.fragments.CategoryPresenter;
 import dnr.donnu.diagnosiscar.presenter.fragments.CategoryPresenterImpl;
@@ -56,7 +56,7 @@ public class CategoryFragment extends BaseFragment<CategoryPresenter> implements
 	}
 
 	@Override
-	public void openAnswer(int user) {
-		showFragmentWithoutBackStack(QuestionFragment.open(user));
+	public void openAnswer(Question question) {
+		showFragmentWithoutBackStack(QuestionFragment.open(question));
 	}
 }

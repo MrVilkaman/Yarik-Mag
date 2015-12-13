@@ -10,6 +10,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import dnr.donnu.diagnosiscar.R;
+import dnr.donnu.diagnosiscar.model.entity.Category;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder>
 		implements View.OnClickListener  {
@@ -37,9 +38,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
 	@Override
 	public void onBindViewHolder(ViewHolder holder, int position) {
-//		User user = mUsers.get(position);
-		holder.name.setText("position "+position);
-		holder.itemView.setTag(position);
+		Category category = getCategory(position);
+		holder.name.setText(category.getTitle());
+		holder.itemView.setTag(category.getFirstQuestionId());
+	}
+
+	private Category getCategory(int position) {
+		Category category = new Category();
+		category.setTitle("position "+ position);
+		return category;
 	}
 
 	@Override
