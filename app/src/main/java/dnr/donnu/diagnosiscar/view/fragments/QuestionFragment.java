@@ -61,6 +61,7 @@ public class QuestionFragment extends BaseFragment<QuestionPresenter> implements
 
 	@Override
 	public void showAnswer(int answerId){
+		showFragmentWithoutBackStack(AnswerFragment.open(answerId));
 	}
 
 	@OnClick(R.id.yes)

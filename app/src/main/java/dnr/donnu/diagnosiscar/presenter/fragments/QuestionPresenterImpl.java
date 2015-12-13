@@ -15,7 +15,7 @@ public class QuestionPresenterImpl extends QuestionPresenter {
 
 	@Override
 	public void clickYes() {
-
+		getView().showAnswer(13);
 	}
 
 	@Override

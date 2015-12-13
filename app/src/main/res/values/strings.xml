@@ -6,4 +6,5 @@
 	<string name="back">Назад</string>
 	<string name="no">Нет</string>
 	<string name="yes">Да</string>
+	<string name="sms">Отправить СМС</string>
 </resources>
