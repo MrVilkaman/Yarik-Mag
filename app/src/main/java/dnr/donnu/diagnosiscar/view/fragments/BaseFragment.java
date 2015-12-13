@@ -93,7 +93,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
 	}
 
 	protected void showFragmentWithoutBackStack(BaseFragment fragment) {
-		getBaseActivity().loadRootFragment(fragment, false, true);
+		getBaseActivity().loadRootFragment(fragment, false, false);
 	}
 
 	protected BaseActivityPresenter getBaseActivity() {
