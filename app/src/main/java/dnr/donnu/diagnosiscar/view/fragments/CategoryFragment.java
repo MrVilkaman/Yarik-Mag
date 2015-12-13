@@ -52,6 +52,11 @@ public class CategoryFragment extends BaseFragment<CategoryPresenter> implements
 		recyclerView.setLayoutManager(layoutManager);
 		recyclerView.setAdapter(adapter = new CategoryAdapter());
 
-		adapter.setClickListener(user -> Toast.makeText(getContext(), ""+user, Toast.LENGTH_SHORT).show());
+		adapter.setClickListener(user -> getPresenter().clickOnItem(user));
+	}
+
+	@Override
+	public void openAnswer(int user) {
+		showFragmentWithoutBackStack(QuestionFragment.open(user));
 	}
 }

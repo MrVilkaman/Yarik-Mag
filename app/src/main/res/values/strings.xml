@@ -4,4 +4,6 @@
 	<string name="main_chouse_category">Выбрать тему</string>
 	<string name="layout_category_title">Выбор темы</string>
 	<string name="back">Назад</string>
+	<string name="no">Нет</string>
+	<string name="yes">Да</string>
 </resources>
