@@ -5,4 +5,6 @@ import dnr.donnu.diagnosiscar.view.fragments.CategoryView;
 
 public abstract class CategoryPresenter extends BasePresenter<CategoryView> {
 	public abstract void clickOnItem(int user);
+
+	public abstract void loadCategories();
 }

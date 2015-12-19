@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import dnr.donnu.diagnosiscar.R;
@@ -15,11 +18,17 @@ import dnr.donnu.diagnosiscar.model.entity.Category;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder>
 		implements View.OnClickListener  {
 
+
 	public interface OnClickListener {
 		void onCategoryClick(int questionId);
 	}
 
+	private List<Category> categories;
 	private OnClickListener clickListener;
+
+	public CategoryAdapter() {
+		categories = new ArrayList<>();
+	}
 
 	public void setClickListener(OnClickListener clickListener) {
 		this.clickListener = clickListener;
@@ -44,14 +53,17 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 	}
 
 	private Category getCategory(int position) {
-		Category category = new Category();
-		category.setTitle("position "+ position);
-		return category;
+		return categories.get(position);
+	}
+
+
+	public void setItems(List<Category> categories) {
+		this.categories.addAll(categories);
 	}
 
 	@Override
 	public int getItemCount() {
-		return 10;
+		return categories.size();
 	}
 
 	@Override

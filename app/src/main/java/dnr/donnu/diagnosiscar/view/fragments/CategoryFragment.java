@@ -6,9 +6,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.OnClick;
+import dnr.donnu.diagnosiscar.App;
 import dnr.donnu.diagnosiscar.R;
+import dnr.donnu.diagnosiscar.model.entity.Category;
 import dnr.donnu.diagnosiscar.model.entity.Question;
 import dnr.donnu.diagnosiscar.presenter.adapter.CategoryAdapter;
 import dnr.donnu.diagnosiscar.presenter.fragments.CategoryPresenter;
@@ -53,10 +57,18 @@ public class CategoryFragment extends BaseFragment<CategoryPresenter> implements
 		recyclerView.setAdapter(adapter = new CategoryAdapter());
 
 		adapter.setClickListener(user -> getPresenter().clickOnItem(user));
+
+		getPresenter().loadCategories();
 	}
+
 
 	@Override
 	public void openAnswer(Question question) {
 		showFragmentWithoutBackStack(QuestionFragment.open(question));
+	}
+
+	@Override
+	public void showCategories(List<Category> categories) {
+		adapter.setItems(categories);
 	}
 }
