@@ -37,6 +37,7 @@ public class AnswerFragment extends BaseFragment<AnswerPresenter> implements Ans
 
 	@Override
 	protected void onCreateView(View view, Bundle savedInstanceState) {
+		getToolbar().setText(R.string.layout_answer_title);
 		int id = getArguments().getInt(EXTRA_ANSWER_ID);
 		getPresenter().loadAnswer(id);
 	}

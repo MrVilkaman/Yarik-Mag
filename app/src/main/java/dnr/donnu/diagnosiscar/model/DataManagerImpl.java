@@ -7,8 +7,10 @@ import com.pushtorefresh.storio.sqlite.queries.Query;
 
 import java.util.List;
 
+import dnr.donnu.diagnosiscar.model.db.tables.AnswerTable;
 import dnr.donnu.diagnosiscar.model.db.tables.CategoryTable;
 import dnr.donnu.diagnosiscar.model.db.tables.QuestionTable;
+import dnr.donnu.diagnosiscar.model.entity.Answer;
 import dnr.donnu.diagnosiscar.model.entity.Category;
 import dnr.donnu.diagnosiscar.model.entity.Question;
 import rx.Observable;
@@ -21,6 +23,8 @@ public class DataManagerImpl implements DataManager {
 		this.storIOSQLite = storIOSQLite;
 	}
 
+
+	//// TODO: 20.12.2015 replace with dbhelper
 	@Override
 	public Observable<List<Category>> getCategory() {
 		return storIOSQLite
@@ -43,6 +47,23 @@ public class DataManagerImpl implements DataManager {
 						.table(QuestionTable.TABLE)
 						.where(QuestionTable.ID +" = ?")
 						.whereArgs(questionId)
+						.build())
+				.prepare()
+				.createObservable()
+				.first()
+				.filter(questions -> !questions.isEmpty())
+				.flatMap(questions -> Observable.just(questions.get(0)));
+	}
+
+	@Override
+	public Observable<Answer> getAnswer(int id) {
+		return storIOSQLite
+				.get()
+				.listOfObjects(Answer.class)
+				.withQuery(Query.builder()
+						.table(AnswerTable.TABLE)
+						.where(AnswerTable.ID +" = ?")
+						.whereArgs(id)
 						.build())
 				.prepare()
 				.createObservable()
