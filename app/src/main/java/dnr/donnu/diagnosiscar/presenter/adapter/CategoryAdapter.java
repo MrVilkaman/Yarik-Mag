@@ -59,6 +59,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
 	public void setItems(List<Category> categories) {
 		this.categories.addAll(categories);
+		notifyDataSetChanged();
 	}
 
 	@Override

@@ -7,7 +7,7 @@ import dnr.donnu.diagnosiscar.model.entity.Category;
 import dnr.donnu.diagnosiscar.model.entity.Question;
 
 public interface CategoryView extends BaseView{
-	void openAnswer(Question question);
+	void openQuestionScreen(Question question);
 
 	void showCategories(List<Category> categories);
 }

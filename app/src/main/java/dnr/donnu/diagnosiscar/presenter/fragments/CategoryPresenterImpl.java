@@ -1,10 +1,7 @@
 package dnr.donnu.diagnosiscar.presenter.fragments;
 
 
-import com.pushtorefresh.storio.sqlite.StorIOSQLite;
-
-import dnr.donnu.diagnosiscar.App;
-import dnr.donnu.diagnosiscar.model.entity.Question;
+import rx.android.schedulers.AndroidSchedulers;
 
 public class CategoryPresenterImpl extends CategoryPresenter {
 
@@ -13,13 +10,16 @@ public class CategoryPresenterImpl extends CategoryPresenter {
 	}
 
 	@Override
-	public void clickOnItem(int user) {
-		getView().openAnswer(new Question());
+	public void clickOnItem(int questionId) {
+		getDM().getQuestion(questionId)
+				.observeOn(AndroidSchedulers.mainThread())
+				.subscribe(question -> getView().openQuestionScreen(question));
 	}
 
 	@Override
 	public void loadCategories() {
 		getDM().getCategory()
-				.subscribe((categories -> getView().showCategories(categories)));
+				.observeOn(AndroidSchedulers.mainThread())
+				.subscribe(categories -> getView().showCategories(categories));
 	}
 }

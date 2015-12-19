@@ -4,6 +4,7 @@ package dnr.donnu.diagnosiscar;
 import android.app.Application;
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.pushtorefresh.storio.sqlite.StorIOSQLite;
 import com.pushtorefresh.storio.sqlite.queries.Query;
@@ -17,6 +18,8 @@ import dnr.donnu.diagnosiscar.model.db.DbModule;
 import dnr.donnu.diagnosiscar.model.db.DbOpenHelper;
 import dnr.donnu.diagnosiscar.model.db.tables.CategoryTable;
 import dnr.donnu.diagnosiscar.model.entity.Category;
+import rx.plugins.RxJavaErrorHandler;
+import rx.plugins.RxJavaPlugins;
 
 public class App extends Application{
 
@@ -31,6 +34,13 @@ public class App extends Application{
 	@Override
 	public void onCreate() {
 		super.onCreate();
+
+		RxJavaPlugins.getInstance().registerErrorHandler(new RxJavaErrorHandler() {
+			@Override
+			public void handleError(Throwable e) {
+				Log.w("Error", e);
+			}
+		});
 	}
 
 	@NonNull

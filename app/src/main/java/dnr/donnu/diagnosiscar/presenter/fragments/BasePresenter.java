@@ -1,6 +1,7 @@
 package dnr.donnu.diagnosiscar.presenter.fragments;
 
 import android.content.Context;
+import android.os.Bundle;
 
 import dnr.donnu.diagnosiscar.App;
 import dnr.donnu.diagnosiscar.model.DataManager;
@@ -69,4 +70,6 @@ public abstract class BasePresenter<V extends BaseView> {
 		return App.get(getContext()).getDM();
 	}
 
+	public void onSaveInstanceState(Bundle outState){
+	}
 }

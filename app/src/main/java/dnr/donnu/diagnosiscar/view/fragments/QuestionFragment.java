@@ -5,8 +5,6 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.io.Serializable;
 
 import butterknife.Bind;
@@ -18,7 +16,7 @@ import dnr.donnu.diagnosiscar.presenter.fragments.QuestionPresenterImpl;
 
 public class QuestionFragment extends BaseFragment<QuestionPresenter> implements QuestionView {
 
-	private static final String EXTRA_QUESTION = "question";
+	private static final String EXTRA_QUESTION_ID = "question";
 
 	@Bind(R.id.question)
 	TextView question;
@@ -26,7 +24,7 @@ public class QuestionFragment extends BaseFragment<QuestionPresenter> implements
 	public static QuestionFragment open(Question question) {
 		QuestionFragment questionFragment = new QuestionFragment();
 		Bundle args = new Bundle();
-		args.putSerializable(EXTRA_QUESTION,question);
+		args.putInt(EXTRA_QUESTION_ID,question.getId());
 		questionFragment.setArguments(args);
 		return questionFragment;
 	}
@@ -36,17 +34,11 @@ public class QuestionFragment extends BaseFragment<QuestionPresenter> implements
 		return R.layout.layout_question;
 	}
 
-	@Override
-	public void onCreate(@Nullable Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
-		Serializable questionItem = getArguments().getSerializable(EXTRA_QUESTION);
-		getPresenter().setFirstQuestion(questionItem);
-	}
 
 	@Override
 	protected void onCreateView(View view, Bundle savedInstanceState) {
-
+		int firstId = getArguments().getInt(EXTRA_QUESTION_ID, 0);
+		getPresenter().initScreen(savedInstanceState, firstId);
 	}
 
 	@Override

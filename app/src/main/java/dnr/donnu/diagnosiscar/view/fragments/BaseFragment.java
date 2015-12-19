@@ -31,6 +31,12 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment imp
 	}
 
 	@Override
+	public void onSaveInstanceState(Bundle outState) {
+		super.onSaveInstanceState(outState);
+		getPresenter().onSaveInstanceState(outState);
+	}
+
+	@Override
 	public void onDestroy() {
 		super.onDestroy();
 //		App.get(getActivity()).refWatcher().watch(this);

@@ -63,7 +63,7 @@ public class CategoryFragment extends BaseFragment<CategoryPresenter> implements
 
 
 	@Override
-	public void openAnswer(Question question) {
+	public void openQuestionScreen(Question question) {
 		showFragmentWithoutBackStack(QuestionFragment.open(question));
 	}
 
