@@ -12,7 +12,7 @@
 	<color name="icons">#212121</color>
 	<color name="divider">#B6B6B6</color>
 
-    <color name="app_background">#F0F0F0</color>
+    <color name="app_background">#FFFF99</color>
     <color name="toolbar_color">#01BCF1</color>
 	<color name="title_sub_text_color">#007798</color>
 
