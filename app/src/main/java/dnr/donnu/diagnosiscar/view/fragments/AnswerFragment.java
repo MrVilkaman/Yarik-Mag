@@ -49,7 +49,7 @@ public class AnswerFragment extends BaseFragment<AnswerPresenter> implements Ans
 
 	@OnClick(R.id.back)
 	void onClickCategory(){
-		back();
+		showRootFragment(StartScreenFragment.open());
 	}
 
 	@OnClick(R.id.sms)

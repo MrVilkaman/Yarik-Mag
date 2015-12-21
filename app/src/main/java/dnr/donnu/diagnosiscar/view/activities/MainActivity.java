@@ -19,7 +19,7 @@ public class MainActivity extends BaseActivity{
 
 	@Override
 	protected BaseFragment createStartFragment() {
-		return CategoryFragment.open();
+		return StartScreenFragment.open();
 	}
 
 	@Override
