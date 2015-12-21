@@ -17,14 +17,16 @@ import dnr.donnu.diagnosiscar.presenter.fragments.QuestionPresenterImpl;
 public class QuestionFragment extends BaseFragment<QuestionPresenter> implements QuestionView {
 
 	private static final String EXTRA_QUESTION_ID = "question";
+	private static final String EXTRA_CAT_TITLE = "title";
 
 	@Bind(R.id.question)
 	TextView question;
 
-	public static QuestionFragment open(Question question) {
+	public static QuestionFragment open(Question question, String title) {
 		QuestionFragment questionFragment = new QuestionFragment();
 		Bundle args = new Bundle();
 		args.putInt(EXTRA_QUESTION_ID,question.getId());
+		args.putString(EXTRA_CAT_TITLE,title);
 		questionFragment.setArguments(args);
 		return questionFragment;
 	}
@@ -37,7 +39,9 @@ public class QuestionFragment extends BaseFragment<QuestionPresenter> implements
 
 	@Override
 	protected void onCreateView(View view, Bundle savedInstanceState) {
-		int firstId = getArguments().getInt(EXTRA_QUESTION_ID, 0);
+		Bundle arguments = getArguments();
+		getToolbar().setText(arguments.getString(EXTRA_CAT_TITLE));
+		int firstId = arguments.getInt(EXTRA_QUESTION_ID, 0);
 		getPresenter().initScreen(savedInstanceState, firstId);
 	}
 

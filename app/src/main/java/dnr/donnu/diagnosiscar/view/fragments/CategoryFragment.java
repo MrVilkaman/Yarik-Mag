@@ -10,7 +10,6 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.OnClick;
-import dnr.donnu.diagnosiscar.App;
 import dnr.donnu.diagnosiscar.R;
 import dnr.donnu.diagnosiscar.model.entity.Category;
 import dnr.donnu.diagnosiscar.model.entity.Question;
@@ -56,15 +55,15 @@ public class CategoryFragment extends BaseFragment<CategoryPresenter> implements
 		recyclerView.setLayoutManager(layoutManager);
 		recyclerView.setAdapter(adapter = new CategoryAdapter());
 
-		adapter.setClickListener(user -> getPresenter().clickOnItem(user));
+		adapter.setClickListener(category -> getPresenter().clickOnItem(category));
 
 		getPresenter().loadCategories();
 	}
 
 
 	@Override
-	public void openQuestionScreen(Question question) {
-		showFragmentWithoutBackStack(QuestionFragment.open(question));
+	public void openQuestionScreen(Question question, Category category) {
+		showFragmentWithoutBackStack(QuestionFragment.open(question,category.getTitle()));
 	}
 
 	@Override

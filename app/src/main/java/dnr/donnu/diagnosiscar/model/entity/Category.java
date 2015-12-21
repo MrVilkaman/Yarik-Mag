@@ -4,10 +4,12 @@ package dnr.donnu.diagnosiscar.model.entity;
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteColumn;
 import com.pushtorefresh.storio.sqlite.annotations.StorIOSQLiteType;
 
+import java.io.Serializable;
+
 import dnr.donnu.diagnosiscar.model.db.tables.CategoryTable;
 
 @StorIOSQLiteType(table = CategoryTable.TABLE)
-public class Category {
+public class Category implements Serializable {
 
 	@StorIOSQLiteColumn(name = CategoryTable.TITLE)
 	String title;

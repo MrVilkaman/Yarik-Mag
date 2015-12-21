@@ -1,6 +1,8 @@
 package dnr.donnu.diagnosiscar.presenter.fragments;
 
 
+import dnr.donnu.diagnosiscar.model.entity.Category;
+import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 
 public class CategoryPresenterImpl extends CategoryPresenter {
@@ -10,10 +12,16 @@ public class CategoryPresenterImpl extends CategoryPresenter {
 	}
 
 	@Override
-	public void clickOnItem(int questionId) {
-		getDM().getQuestion(questionId)
+	public void clickOnItem(Category category) {
+		Observable.combineLatest(
+				getDM().getQuestion(category.getFirstQuestionId()),
+				Observable.just(category),
+				(question, cat) -> {
+					getView().openQuestionScreen(question,cat);
+					return true;
+				})
 				.observeOn(AndroidSchedulers.mainThread())
-				.subscribe(question -> getView().openQuestionScreen(question));
+				.subscribe();
 	}
 
 	@Override

@@ -20,7 +20,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
 
 	public interface OnClickListener {
-		void onCategoryClick(int questionId);
+		void onCategoryClick(Category category);
 	}
 
 	private List<Category> categories;
@@ -49,7 +49,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 	public void onBindViewHolder(ViewHolder holder, int position) {
 		Category category = getCategory(position);
 		holder.name.setText(category.getTitle());
-		holder.itemView.setTag(category.getFirstQuestionId());
+		holder.itemView.setTag(category);
 	}
 
 	private Category getCategory(int position) {
@@ -69,9 +69,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
 	@Override
 	public void onClick(View v) {
-		Integer position = (Integer) v.getTag();
-		if (clickListener != null && position != null) {
-			clickListener.onCategoryClick(position);
+		Category category = (Category) v.getTag();
+		if (clickListener != null && category != null) {
+			clickListener.onCategoryClick(category);
 		}
 	}
 
