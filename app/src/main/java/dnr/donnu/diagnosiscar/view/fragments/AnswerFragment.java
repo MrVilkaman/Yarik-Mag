@@ -18,6 +18,7 @@ import dnr.donnu.diagnosiscar.presenter.fragments.AnswerPresenterImpl;
 public class AnswerFragment extends BaseFragment<AnswerPresenter> implements AnswerView {
 
 	private static final String EXTRA_ANSWER_ID = "answer";
+	private static final CharSequence PHONE_NUMBER = "0509058307";
 
 	@Bind(R.id.answer)
 	TextView answerView;
@@ -64,6 +65,6 @@ public class AnswerFragment extends BaseFragment<AnswerPresenter> implements Ans
 
 	@Override
 	public void sendSmsAnswer(String text){
-		PhoneUtils.sendSms(getContext(), "", text);
+		PhoneUtils.sendSms(getContext(), PHONE_NUMBER, text);
 	}
 }
